@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <title>Анализ данных</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <script src="scripts/jquery-3.5.0.min.js"></script>
+        <script src="scripts/papaparse.min.js"></script>
+        <script src="scripts/plotly.min.js"></script>
+        <script src="scripts/bootstrap.bundle.min.js"></script>
+        <script src="scripts/bootstrap.bundle.js"></script>
+        <link rel = "stylesheet" href="scripts/bootstrap.min.css"/>
+        <script src="scripts/jquery-ui.min.js"></script>
+        <link rel = "stylesheet" href="scripts/jquery-ui.min.css"/>
+        
+        <script src="plot.js"></script>
+        <link rel = "stylesheet" href="custom.css"/>
+    </head>
+
+    <body>
+        <div id="back_container" class="background_animation">
+            <div class="container-fluid">
+                <!--            main            -->
+                <div class="container">
+                
+                    <!--            logo            -->
+                    <div class="row m10">
+                        <div class="col-8">
+                            <h1>Сортировщик</h1>
+                        </div>
+                    </div>
+                    
+                    <!--            input frame            -->
+                    <div class="row m10">
+                        <div class="col-12 p-0">
+                            <!--            main input frame            -->
+                            <fieldset class="shadow p-2 rounded bg-primary justify-content-center" id="maininput">
+                                <div class="row p-0 m-1 mb-2">
+                                    <button type="button" class="btn btn-outline-primary bg-light mr-1 shadow" id="randomSequence">рандом</button>
+                                    <button type="button" class="btn btn-outline-primary bg-light mr-1 shadow" id="swapSequence">перетасовать</button>
+                                    <button type="button" class="btn btn-outline-primary bg-light mr-1 shadow" id="inputSequence" data-toggle="modal" data-target="#inputModal">ввести массив</button>
+                                </div>
+                                <div class="row bg-white rounded shadow p-1 m-1">
+                                    <div class="col-12 p-0">
+                                        <div id="BarChart"></div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters my-2 m-1">
+                                    <div class="col col-3 p-1 align-items-center h5 text-white justify-content-end">число элементов   </div>
+                                    <div class="col col-9 p-1 bg-white rounded shadow"><input type="text" class="form-control" id="SequenceLength" placeholder="" value="25"></div>
+                                </div>
+                                <div class="row no-gutters my-2 m-1">
+                                    <div class="btn-group shadow" role="group" aria-label="Button group with nested dropdown" id="btnGroupSort">
+                                        <div class="btn-group" role="group">
+                                          <button id="btnGroupDropchoiceSortingAlgo" type="button" class="btn btn-light btn-md dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Выберите метод сортировки
+                                          </button>
+                                          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                            <a class="dropdown-item choiceSortingAlgo" id="0" href="#">Сортировка пузырьком</a>
+                                            <a class="dropdown-item choiceSortingAlgo" id="1" href="#">Шейкерная сортировка</a>
+                                            <a class="dropdown-item choiceSortingAlgo" id="2" href="#">Сортировка вставками</a>
+                                            <a class="dropdown-item choiceSortingAlgo" id="3" href="#">Сортировка выбором</a>
+                                            <a class="dropdown-item choiceSortingAlgo" id="4" href="#">Быстрая сортировка</a>
+                                            <a class="dropdown-item choiceSortingAlgo" id="5" href="#">Сортировка Шелла</a>
+                                          </div>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-md" id="Sort">Отсортировать</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="inputModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Введите массив</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="bg-white p-1 mb-1">
+                                    <div class="row no-gutters" style="width:100%;">
+                                        <div class="col col-12"><input type="text" class="form-control" id="inputSequenceForm" placeholder="1 2 3 4 5 6 ..." value=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">отмена</button>
+                            <button type="button" class="btn btn-primary" id="saveSequence" data-dismiss="modal">ввести</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+    
+                    <!--            button frame            -->
+                    <div class="shadow p-2 rounded bg-primary justify-content-center m10">
+                        <div class="row justify-content-start p-1 ml-1">
+                            <div class="col-12 p-1 h5 text-white">Сравнение алгоритмов</div>
+                        </div>
+                        <div class="row justify-content-start p-1 my-1 mx-1 rounded bg-white shadow">
+                            <div class="col-12 p-1 m-1 mx-3">
+                                <h6>Выберите начальное и конечное число элементов в последовательности</h6>
+                            </div>
+                            <div class="col-12 p-0 m-0">
+                                <div class="row no-gutters" style="width: 100%;">
+                                    <div class="col-1 justify-content-center align-self-center">
+                                        <input type="text" class="form-control inputRange" style="border: none; border-width: 0; box-shadow: none; background-color:transparent; text-align: center;" id="inputL" value="-10">
+                                    </div>
+                                    <div class="col-10 justify-content-center align-self-center">
+                                        <div id="sliderRange"></div>
+                                    </div>
+                                    <div class="col-1 justify-content-center align-self-center">
+                                        <input type="text" class="form-control inputRange" style="border: none; border-width: 0; box-shadow: none; background-color:transparent; text-align: center;" id="inputR" value="10">
+                                    </div>
+                                </div>
+                                <script>
+                                    $(function() {
+                                        $("#sliderRange").slider({
+                                            range: true,
+                                            min: 1,
+                                            max: 100000,
+                                            values: [10, 10000],
+                                            slide: function( event, ui ) {
+                                                $("#inputL").val(ui.values[0]);
+                                                $("#inputR").val(ui.values[1]);
+                                            }
+                                        });
+                                        $("#inputL").val($("#sliderRange").slider("values", 0));
+                                        $("#inputR").val($("#sliderRange").slider("values", 1));
+                                    });
+                                    $(document).on('change', '.inputRange', function() {
+                                        $("#sliderRange").slider({
+                                            range: true,
+                                            min: 1,
+                                            max: 100000,
+                                            values: [$("#inputL").val(), $("#inputR").val()],
+                                            slide: function( event, ui ) {
+                                                $("#inputL").val(ui.values[0]);
+                                                $("#inputR").val(ui.values[1]);
+                                            }
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center p-1">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-outline-primary bg-light btn-lg btn-block shadow" id="Compare">Построить графики</button>
+                            </div>
+                        </div>
+                        <div class="row bg-white rounded shadow p-1 my-1 mx-1" id="ChartTNBOX">
+                            <div class="col-12 p-1 m-1 h5 text-primary">Линейное представление</div>
+                            <div class="col-12 p-0 m-0">
+                                <div id="ChartTN"></div>
+                            </div>
+                        </div>
+                        <div class="row bg-white rounded shadow p-1 my-1 mx-1" id="ChartTNLogBOX">
+                            <div class="col-12 p-1 m-1 h5 text-primary">Логарифмическое представление</div>
+                            <div class="col-12 p-0 m-0">
+                                <div id="ChartTNLog"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 code"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--            credits           -->
+        <div class="container-fluid" id="credits" style="position:absolute; bottom:0; width:100%;">
+            <div class="row">
+                <div class="col-12 bg-primary text-white"><h6 style="text-align:center; vertical-align: middle; height: 1.5em; margin-top: 0.5em;">
+                    Разработал Карачурин Рауль,
+                    студент группы Б19-501,
+                    2020 год.</h6></div>
+            </div>
+        </div>
+    
+    </body>
+</html>

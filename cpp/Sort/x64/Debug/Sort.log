@@ -1,0 +1,4 @@
+﻿  Sort.cpp
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(41,35): error C3867: "std::vector<ISorter<int> *,std::allocator<ISorter<int> *>>::size": нестандартный синтаксис; используйте "&", чтобы создать указатель на член
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(41,35): error C2446: <: нет преобразования "unsigned __int64 (__cdecl std::vector<ISorter<int> *,std::allocator<ISorter<int> *>>::* )(void) noexcept const" в "int"
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(41,31): message : Не существует контекста, в котором такое преобразование возможно

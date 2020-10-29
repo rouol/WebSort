@@ -1,0 +1,101 @@
+﻿  Sort.cpp
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(58,30): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(83,68): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(125,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(119): message : во время компиляции функции-члена класс шаблон "Sequence<T> *ArraySequence<T>::Concat(Sequence<T> *)"
+          with
+          [
+              T=__int64
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(83): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "ArraySequence<__int64>"
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(107,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(103): message : во время компиляции функции-члена класс шаблон "Sequence<T> *ArraySequence<T>::GetSubSequence(const size_t,const size_t)"
+          with
+          [
+              T=__int64
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(89,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(88): message : во время компиляции функции-члена класс шаблон "void ArraySequence<__int64>::InsertAt(T,const size_t)"
+          with
+          [
+              T=__int64
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(122): message : выполняется компиляция ссылки на экземпляр шаблон функции "void ArraySequence<__int64>::InsertAt(T,const size_t)"
+          with
+          [
+              T=__int64
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(79,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(78): message : во время компиляции функции-члена класс шаблон "void ArraySequence<__int64>::Prepend(T)"
+          with
+          [
+              T=__int64
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(94,22): warning C4244: аргумент: преобразование "T" в "size_t", возможна потеря данных
+          with
+          [
+              T=double
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(97,37): warning C4244: аргумент: преобразование "T" в "size_t", возможна потеря данных
+          with
+          [
+              T=double
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(81,20): warning C4244: аргумент: преобразование "T" в "size_t", возможна потеря данных
+          with
+          [
+              T=double
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(83,41): warning C4244: аргумент: преобразование "T" в "size_t", возможна потеря данных
+          with
+          [
+              T=double
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(146,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(145): message : во время компиляции функции-члена класс шаблон "void ShellSort<double>::operator ()(Sequence<T> &,std::function<bool (const T &,const T &)>)"
+          with
+          [
+              T=double
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(57): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "ShellSort<double>"
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(132,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(131): message : во время компиляции функции-члена класс шаблон "void QuickSort<double>::operator ()(Sequence<T> &,std::function<bool (const T &,const T &)>)"
+          with
+          [
+              T=double
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(57): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "QuickSort<double>"
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(88,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(87): message : во время компиляции функции-члена класс шаблон "void SelectionSort<double>::operator ()(Sequence<T> &,std::function<bool (const T &,const T &)>)"
+          with
+          [
+              T=double
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(57): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "SelectionSort<double>"
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(70,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(69): message : во время компиляции функции-члена класс шаблон "void InsertionSort<double>::operator ()(Sequence<T> &,std::function<bool (const T &,const T &)>)"
+          with
+          [
+              T=double
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(57): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "InsertionSort<double>"
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(45,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(44): message : во время компиляции функции-члена класс шаблон "void ShakerSort<double>::operator ()(Sequence<T> &,std::function<bool (const T &,const T &)>)"
+          with
+          [
+              T=double
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(57): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "ShakerSort<double>"
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(28,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.h(27): message : во время компиляции функции-члена класс шаблон "void BubbleSort<double>::operator ()(Sequence<T> &,std::function<bool (const T &,const T &)>)"
+          with
+          [
+              T=double
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(57): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "BubbleSort<double>"
+  Создание кода
+  6 of 579 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    3 functions were new in current compilation
+    12 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  Sort.vcxproj -> C:\Raul\programming\cpp\Sort\cpp\x64\Release\Sort.exe

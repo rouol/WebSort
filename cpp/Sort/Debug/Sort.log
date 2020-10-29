@@ -1,0 +1,25 @@
+﻿  Sort.cpp
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(41,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(121,2): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(119): message : во время компиляции функции-члена класс шаблон "Sequence<T> *ArraySequence<T>::Concat(Sequence<T> *)"
+          with
+          [
+              T=int
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(32): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "ArraySequence<int>"
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(125,2): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(110,2): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(103): message : во время компиляции функции-члена класс шаблон "Sequence<T> *ArraySequence<T>::GetSubSequence(const size_t,const size_t)"
+          with
+          [
+              T=int
+          ]
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(111,11): warning C4018: >=: несоответствие типов со знаком и без знака
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(111,27): warning C4018: <=: несоответствие типов со знаком и без знака
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sequence.h(318,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Raul\programming\cpp\Sort\cpp\Sort\Sort.cpp(38): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::ostream &operator <<<T>(std::ostream &,Sequence<T> *)"
+          with
+          [
+              T=int
+          ]
+  Sort.vcxproj -> C:\Raul\programming\cpp\Sort\cpp\Debug\Sort.exe
