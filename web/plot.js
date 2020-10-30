@@ -1,11 +1,12 @@
 // global vars
 local_ip = '192.168.31.80';
-ip = local_ip;
+global_ip = '85.143.113.155';
+ip = global_ip;
 
 //var SortingAlgoList = ['Bubble Sort', 'Shaker Sort', 'Insertion Sort', 'Selection Sort', 'QuickSort', 'ShellSort'];
 var SortingAlgoList = ['Сортировка пузырьком', 'Шейкерная сортировка', 'Сортировка вставками', 'Сортировка выбором', 'Быстрая сортировка', 'Сортировка Шелла']
 var SortingAlgoID = null;
-var SequenceLength = 25;
+var SequenceLength = 50;
 var Sequence = [];
 var nList = [];
 
@@ -90,12 +91,13 @@ function workingSpinnerSort(state) {
 function successAlertSort(time) {
     //add alert
     // style="text-align:start; vertical-align: center; height: 2.35em;"
+    jQuery("#success_alert").remove();
     var success_alert_html = jQuery('<div id="success_alert" class="text-white mx-3 mt-2"><h6>выполнено за ' + time + ' мс</h6></div>');
     jQuery("#btnGroupSort").append(success_alert_html);
-    jQuery("#success_alert").delay(2000).fadeOut(250);
+    jQuery("#success_alert").delay(3000).fadeOut(500);
     setTimeout(function() {
         jQuery("#success_alert").remove();
-    }, 2250);
+    }, 3500);
 }
 
 function workingSpinnerCompareSort(state) {
@@ -126,9 +128,9 @@ function plotBarPlot(){
           y: Sequence,
           type: 'bar',
           marker: {
-            color: 'rgba(58,200,225,.5)',
+            color: 'rgba(8,200,225,.5)',
             line: {
-              color: 'rgb(8,48,107)',
+              color: 'rgb(0,0,0)',/*'rgb(8,48,107)',*/
               width: 1.5
             }
           }
@@ -165,25 +167,64 @@ function makePlotT(nSeries, tSeries){
               size: 12,
               color: '#000'
             },*/
-            bgcolor: '#FFFFFF',
-            bordercolor: '#FFFFFF',
-            borderwidth: 2
+            bgcolor: 'rgba(0,0,0,0)',
+            //bordercolor: '#FFFFFF',
+            //borderwidth: 2
         },
         margin: {
-            l: 50,
-            r: 50,
+            l: 75,
+            r: 25,
             b: 50,
-            t: 50,
-            pad: 4}
+            t: 25,
+            pad: 2},
+        xaxis: {
+            title: {
+                text: 'число элементов массива',
+                font: {
+                //family: 'Courier New, monospace',
+                //size: 24,
+                //color: '#7f7f7f'
+                }
+            },
+        },
+        yaxis: {
+            title: {
+                text: 'время, мс',
+                font: {
+                //family: 'Courier New, monospace',
+                //size: 24,
+                //color: '#7f7f7f'
+                }
+            }
+        }
         });
     Plotly.newPlot('ChartTNLog', traces, {
         displayModeBar: true,
         config,
+
         /*xaxis: {
             type: 'log',
             autorange: true
         },*/
+        xaxis: {
+            title: {
+                text: 'число элементов массива',
+                font: {
+                //family: 'Courier New, monospace',
+                //size: 24,
+                //color: '#7f7f7f'
+                }
+            },
+        },
         yaxis: {
+            title: {
+                text: 'время, мс',
+                font: {
+                //family: 'Courier New, monospace',
+                //size: 24,
+                //color: '#7f7f7f'
+                }
+            },
             type: 'log',
             autorange: true
             },
@@ -197,16 +238,16 @@ function makePlotT(nSeries, tSeries){
               size: 12,
               color: '#000'
             },*/
-            bgcolor: '#FFFFFF',
-            bordercolor: '#FFFFFF',
-            borderwidth: 2
+            bgcolor: 'rgba(0,0,0,0)',
+            //bordercolor: '#FFFFFF',
+            //borderwidth: 2
         },
         margin: {
-            l: 50,
-            r: 50,
+            l: 75,
+            r: 25,
             b: 50,
-            t: 50,
-            pad: 4}
+            t: 25,
+            pad: 2}
         });
 }
 
@@ -276,7 +317,7 @@ function Sort(){
         }
         //console.log(data);
         jQuery.post(
-            'http://' + ip + ':5000',
+            'http://' + ip + ':5100',
             data,
             successSort
         );
@@ -297,6 +338,7 @@ function successSort(data){
 function CompareSort(){
     startN = $("#inputL").val();
     endN = $("#inputR").val();
+    nList = [];
     for (n = startN; n <= endN; n *= 2){
         nList.push(n);
     }
@@ -307,7 +349,7 @@ function CompareSort(){
     }
     workingSpinnerCompareSort(true);
     jQuery.post(
-        'http://' + ip + ':5000',
+        'http://' + ip + ':5100',
         data,
         successCompareSort
     );
